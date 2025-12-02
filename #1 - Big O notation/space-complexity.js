@@ -62,7 +62,7 @@ function createMatrix1(n) {
     console.log(`\n➡ Creating row ${i}`);
 
     matrix[i] = [];
-    console.log(`Row ${i} initialized as empty array:`, matrix[i]);
+    console.log(`Row ${i} initialized as empty array:`, matrix);
 
     for (let j = 0; j < n; j++) {
       console.log(`  - Filling cell [${i}][${j}] with value: ${i} + ${j} = ${i + j}`);
