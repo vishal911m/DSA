@@ -45,5 +45,40 @@ function createMatrix(n) {
 [[1, 2, 3], [], []];
 
 // example usage
-const matrix = createMatrix(10);
-console.log(matrix);
+const matrix = createMatrix(3);
+// console.log(matrix);
+
+
+// #####################################################################################################################################
+// ChatGPT code with console logs
+
+function createMatrix1(n) {
+  console.log("Starting matrix creation with size:", n);
+
+  let matrix = [];
+  console.log("Initial matrix:", matrix);
+
+  for (let i = 0; i < n; i++) {
+    console.log(`\n➡ Creating row ${i}`);
+
+    matrix[i] = [];
+    console.log(`Row ${i} initialized as empty array:`, matrix[i]);
+
+    for (let j = 0; j < n; j++) {
+      console.log(`  - Filling cell [${i}][${j}] with value: ${i} + ${j} = ${i + j}`);
+
+      matrix[i][j] = i + j;
+
+      console.log(`  - Current state of row ${i}:`, matrix[i]);
+    }
+
+    console.log(`✔ Finished row ${i}:`, matrix[i]);
+  }
+
+  console.log("\n🎉 Final Matrix:", matrix);
+  return matrix;
+}
+
+// example usage
+const matrix1 = createMatrix1(3);
+console.log("\nReturned matrix:", matrix1);
