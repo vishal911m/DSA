@@ -1,3 +1,115 @@
+const arrayMethodsBreakdown = {
+  push: {
+    description: "Adds an element to the END of an array.",
+    example: `arr.push("orange") → ["apple", "banana", "cherry", "orange"]`,
+  },
+
+  pop: {
+    description: "Removes the LAST element from the array.",
+    example: `arr.pop() → removes last item`,
+  },
+
+  unshift: {
+    description: "Adds an element to the BEGINNING of the array.",
+    example: `arr.unshift("orange") → ["orange", "apple", "banana"]`,
+  },
+
+  shift: {
+    description: "Removes the FIRST element from the array.",
+    example: `arr.shift() → removes index 0 element`,
+  },
+
+  map: {
+    description:
+      "Loops through array & returns a NEW array. Does NOT modify original array.",
+    example: `numbers.map(n => n + 5) → [6,7,8,9,10]`,
+  },
+
+  filter: {
+    description:
+      "Returns a NEW array containing elements that pass the condition.",
+    example: `numbers.filter(n => n > 3) → [4,5]`,
+  },
+
+  reduce: {
+    description:
+      "Reduces the array to a single value (sum, product, etc.).",
+    example: `numbers.reduce((prev, curr) => prev + curr, 0) → 15`,
+  },
+
+  some: {
+    description:
+      "Returns TRUE if **any** element satisfies the condition.",
+    example: `numbers.some(n => n > 10) → false`,
+  },
+
+  every: {
+    description:
+      "Returns TRUE only if **all** elements satisfy the condition.",
+    example: `numbers.every(n => n < 10) → true`,
+  },
+
+  find: {
+    description:
+      "Returns the FIRST element that matches the condition.",
+    example: `numbers.find(n => n > 3) → 4`,
+  },
+
+  concat: {
+    description: "Merges two or more arrays. Returns a NEW array.",
+    example: `nums.concat(nums1) → [1,2,3,4,5,6,7,8,9,10]`,
+  },
+
+  slice: {
+    description:
+      "Returns a part of the array WITHOUT modifying the original.",
+    example: `arr.slice(0,2) → items at index 0 & 1`,
+  },
+
+  splice: {
+    description:
+      "Adds/removes elements at specific positions. **Modifies original array**.",
+    example: `arr.splice(1, 2, "brocolli") → removes 2 items, inserts 'brocolli'`,
+  },
+
+  fill: {
+    description:
+      "Replaces array elements with a static value from start to end.",
+    example: `dummy.fill(2,2) → fills from index 2 to end with 2`,
+  },
+
+  flat: {
+    description: "Flattens nested arrays to given depth.",
+    example: `flatEx.flat(2) → [1,2,3,4,5,6]`,
+  },
+
+  reverse: {
+    description:
+      "Reverses the array **in place** (modifies original).",
+    example: `nums.reverse() → [5,4,3,2,1]`,
+  },
+
+  sort: {
+    description:
+      "Sorts array **in place**. Needs compare function for numeric sort.",
+    example: `unsorted.sort((a,b) => a - b) → ascending order`,
+  },
+
+  spreadOperator: {
+    description:
+      "Expands elements of an array.",
+    example: `[...nums, ...nums1]`,
+  },
+
+  restOperator: {
+    description:
+      "Collects multiple arguments into an array.",
+    example: `function sum1(...numbers) { }`,
+  }
+};
+
+export default arrayMethodsBreakdown;
+
 // Arrays - declaration
 
 let person = {
@@ -147,4 +259,6 @@ nums.reverse();
 // Sort an array
 const unsorted = [5,2,10,7,3,1];
 unsorted.sort((a,b)=> a-b); // for descending order, use b-a
-console.log(unsorted);
+// console.log(unsorted);
+
+
