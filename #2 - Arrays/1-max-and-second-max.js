@@ -33,19 +33,33 @@ console.log(secondLargest([12, 35, 1, 10, 34, 1, 34]));
 // Time complexity => O(n log n)
 
 function secondLargestOptimised(arr){
+  // Initialize two variables:
+  // `largest` → the biggest number found so far
+  // `secondLargest` → the second biggest number found so far
+  // Both start at -1 (assuming array contains only non-negative numbers)
   let largest = -1;
   let secondLargest = -1;
 
+  // Loop through every element once → O(n)
   for(let i=0; i<arr.length; i++){ // Time complexity = O(n)
+    // Case 1: Found a new largest number
     if(arr[i] > largest) {
+      // The old largest becomes the second largest
       secondLargest = largest;
+      
+      // And update the new largest
       largest = arr[i];
+
+    // Case 2: Element is NOT equal to largest (to avoid duplicates)
+    // AND it's greater than current secondLargest
     } else if(arr[i] != largest && arr[i] > secondLargest) {
+      // Update second largest
       secondLargest = arr[i];
     }
   }
+  // Return the second largest value found
   return secondLargest;
 }
 
-// console.log(secondLargestOptimised([12, 35, 1, 10, 34, 1, 34]))
+console.log(secondLargestOptimised([12, 35, 1, 10, 34, 1, 34]));
 
