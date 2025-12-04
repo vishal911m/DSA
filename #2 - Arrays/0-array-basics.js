@@ -235,7 +235,7 @@ function sum1(...numbers){  // Rest operator
 
 // Splice 
 // console.log(arr);
-const splice = arr.splice(1, 2, "brocolli");
+// const splice = arr.splice(1, 2, "brocolli");
 // console.log(splice);
 // console.log(arr);
 
@@ -260,5 +260,53 @@ nums.reverse();
 const unsorted = [5,2,10,7,3,1];
 unsorted.sort((a,b)=> a-b); // for descending order, use b-a
 // console.log(unsorted);
+
+
+// Sum of all numbers in a nested array
+
+// let result = 0;
+// const sumNested = (arr)=>{
+// 	for(let item of arr){
+// 		if(Array.isArray(item)){
+// 			sumNested(item)
+// 		} else {
+// 			result += item
+// 		}
+// 	}
+// }
+
+// sumNested([1,2,3,[1,2,3]]);
+// console.log(result)
+
+// Sum of all numbers in a nested array - With console logs
+let result = 0;
+
+const sumNested = (arr) => {
+  console.log("➡️ Calling sumNested with:", arr);
+
+  for (let item of arr) {
+    console.log("\n Checking item:", item);
+
+    // Check if item is an array
+    if (Array.isArray(item)) {
+      console.log("   📦 Item is an array, going deeper...");
+      sumNested(item); // recursion
+      console.log("   ↩️ Returned from nested array:", item);
+
+    } else {
+      // If it's a number, add it to result
+      console.log(`   ➕ Adding number ${item} to result`);
+      result += item;
+      console.log("   🧮 Current result =", result);
+    }
+  }
+
+  console.log("⬅️ Exiting sumNested for:", arr);
+};
+
+sumNested([1, 2, 3, [1, 2, 3]]);
+console.log("✅ Final Result =", result);
+
+
 
 
